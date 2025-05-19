@@ -42,6 +42,7 @@ const Logo = styled(motion.img)`
   @media (max-width: 600px) {
     width: 80px;
     height: 80px;
+    margin-top: 1.5rem;
   }
 `
 
@@ -100,9 +101,11 @@ const Subtitle = styled(motion.p)`
   opacity: 0.8;
   margin-top: 1.5rem;
   text-align: center;
+  padding: 0 1rem;
   @media (max-width: 600px) {
     font-size: 1rem;
     margin-top: 1rem;
+    padding: 0 1rem;
   }
 `
 
