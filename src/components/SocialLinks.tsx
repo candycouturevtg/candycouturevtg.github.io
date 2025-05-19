@@ -10,6 +10,10 @@ const LinkContainer = styled(motion.div)`
   gap: 1.5rem;
   width: 100%;
   margin-top: 2.5rem;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `
 
 const Link = styled(motion.a)`

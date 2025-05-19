@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@emotion/react'
 import theme from './theme'
 import { Header } from './components/Header'
-import { FeaturedItems } from './components/FeaturedItems'
+// import { FeaturedItems } from './components/FeaturedItems'
 import { SocialLinks } from './components/SocialLinks'
 
 type CustomTheme = {
@@ -32,7 +32,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Header />
-      <FeaturedItems />
+      {/* <FeaturedItems /> Disabled for now */}
       <SocialLinks />
     </ThemeProvider>
   )
