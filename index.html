@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #f0bfbf;
+    --pink-deep: #d98a8a;
+    --pink-pale: #fdf0f0;
+    --pink-mid: #f5d5d5;
+    --ink: #2a1f1f;
+    --muted: #9a8282;
+    --border: #ecd8d8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--pink-pale);
+    color: var(--ink);
+    font-weight: 300;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 72px 24px 56px;
+    text-align: center;
+    background: white;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: var(--pink-mid);
+    border: 2px solid var(--pink);
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+  .avatar-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--pink), var(--pink-mid));
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .title {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--pink-deep);
+    margin-bottom: 18px;
+  }
+
+  .bio {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 360px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .contact-link {
+    display: inline-block;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--pink-deep);
+    padding-bottom: 1px;
+    transition: color 0.15s;
+  }
+
+  .contact-link:hover { color: var(--pink-deep); }
+
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+
+  .section { margin-bottom: 56px; }
+
+  .section-title {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .stat {
+    background: white;
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  .stat-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-l {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .ig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 600px) { .ig-grid { grid-template-columns: 1fr; } }
+
+  .embed-wrap {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .embed-wrap.full { min-height: 500px; }
+
+  .ph {
+    width: 100%;
+    min-height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--border);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 32px;
+    background: #fafafa;
+  }
+
+  .ph-line { width: 32px; height: 1px; background: var(--pink); margin-bottom: 4px; }
+
+  .links { display: flex; flex-direction: column; }
+
+  .link-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    transition: color 0.15s;
+  }
+
+  .link-item:last-child { border-bottom: none; }
+  .link-item:hover { color: var(--pink-deep); }
+  .link-item span { color: var(--muted); font-size: 12px; }
+
+  footer {
+    text-align: center;
+    padding: 32px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  @keyframes up {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  header { animation: up 0.5s ease both; }
+  .section { opacity: 0; }
+  .section.visible { animation: up 0.5s ease both; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="avatar">
+    <!-- Replace with: <img src="photo.jpg" alt="Your Name"> -->
+    <div class="avatar-placeholder"></div>
+  </div>
+  <h1>Your Name</h1>
+  <p class="title">Social Media Manager</p>
+  <p class="bio">Content strategy, short-form video, and community management. Based in New York. Available for freelance and full-time.</p>
+  <a href="mailto:hello@yourname.com" class="contact-link">hello@yourname.com</a>
+</header>
+
+<main>
+
+  <section class="section">
+    <p class="section-title">By the numbers</p>
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-n">24K</span>
+        <span class="stat-l">Instagram</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n">58K</span>
+        <span class="stat-l">TikTok</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n">8.4%</span>
+        <span class="stat-l">Engagement</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n">12+</span>
+        <span class="stat-l">Brands</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-title">Instagram</p>
+    <div class="ig-grid">
+      <div class="embed-wrap">
+        <!-- Paste Instagram embed code here -->
+        <div class="ph"><div class="ph-line"></div>Instagram post</div>
+      </div>
+      <div class="embed-wrap">
+        <!-- Paste Instagram embed code here -->
+        <div class="ph"><div class="ph-line"></div>Instagram post</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-title">TikTok</p>
+    <div class="embed-wrap full">
+      <!-- Paste TikTok embed code here -->
+      <div class="ph"><div class="ph-line"></div>TikTok video</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="section-title">Links</p>
+    <div class="links">
+      <a href="#" class="link-item">Resume <span>PDF</span></a>
+      <a href="#" class="link-item">Media Kit <span>Rates + audience data</span></a>
+      <a href="#" class="link-item">LinkedIn <span>linkedin.com/in/yourname</span></a>
+      <a href="#" class="link-item">Case Studies <span>Campaign breakdowns</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>2026 · Your Name</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.section').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
